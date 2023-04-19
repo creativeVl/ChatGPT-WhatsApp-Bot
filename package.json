@@ -1,0 +1,71 @@
+{
+  "name": "whatsapp-chatgpt",
+  "version": "1.0.2",
+  "description": "This project is a WhatsApp bot that uses OpenAI's ChatGPT to respond to user inputs. It also includes a cron that you can setup to allow ChatGPT to generate messages and send to recipients at periodic intervals.",
+  "engines": {
+    "node": ">= 18.12 <19"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.3",
+    "@types/qrcode-terminal": "^0.12.0",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.21",
+    "pm2": "^5.3.0",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.4.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "tsutils": "^3.21.0",
+    "typescript": "^5.0.2"
+  },
+  "scripts": {
+    "dev": "npx nodemon src/main.ts",
+    "start": "npm run build && node build/src/main.js",
+    "start:prod": "pm2 start ecosystem.config.json --no-daemon",
+    "clean": "rimraf coverage build tmp",
+    "prebuild": "npm run lint",
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -w -p tsconfig.json",
+    "lint": "eslint . --ext .ts --ext .mts",
+    "test": "jest --coverage",
+    "prettier": "prettier --config .prettierrc --write .",
+    "test:watch": "jest --watch"
+  },
+  "author": "Emmanuel Yeboah <noelzappy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
+    "qrcode-terminal": "^0.12.0",
+    "tslib": "^2.5.0",
+    "whatsapp-web.js": "^1.19.4"
+  },
+  "volta": {
+    "node": "18.12.1"
+  },
+  "keywords": [
+    "openai",
+    "chatgpt",
+    "whatsapp bot",
+    "whatsapp",
+    "gpt",
+    "gpt3",
+    "gpt4",
+    "chatbot",
+    "chat",
+    "machine learning",
+    "conversation",
+    "conversational ai",
+    "ai",
+    "ml",
+    "bot",
+    "chatgpt",
+    "chatgpt whatsapp bot"
+  ]
+}
